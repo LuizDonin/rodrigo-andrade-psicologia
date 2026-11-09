@@ -43,7 +43,7 @@ export default function HomePage() {
     <>
       <MotionObserver />
       <section className="relative overflow-hidden border-b">
-        <Container className="grid min-h-[calc(100svh-5rem)] items-stretch gap-10 py-12 sm:py-16 lg:grid-cols-[0.88fr_1.12fr] lg:gap-16 lg:py-0 xl:gap-24">
+        <Container className="grid min-h-[calc(100svh-5rem)] items-stretch gap-10 py-12 sm:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:py-0 xl:gap-20">
           <div className="relative z-10 flex flex-col justify-center py-4 lg:py-24">
             <span
               className="border-accent absolute top-12 -left-8 hidden size-16 border-t border-l xl:block"
@@ -96,14 +96,14 @@ export default function HomePage() {
 
           <figure
             data-hero-photo
-            className="relative min-h-[32rem] overflow-hidden sm:min-h-[42rem] lg:-right-[max(1.25rem,calc((100vw-80rem)/2))] lg:min-h-full"
+            className="relative min-h-[32rem] overflow-hidden sm:min-h-[42rem] lg:my-8 lg:min-h-0 xl:my-10"
           >
             <Image
               src={`${siteConfig.basePath}/images/rodrigo-criveleto.jpeg`}
               alt="Retrato profissional do psicólogo Rodrigo Criveleto de Andrade"
               fill
               preload
-              sizes="(max-width: 1023px) 100vw, 55vw"
+              sizes="(max-width: 1023px) 100vw, 50vw"
               className="object-cover object-[50%_36%] sm:object-[50%_40%] lg:object-[50%_43%]"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
