@@ -2,6 +2,7 @@ export type SiteConfig = {
   name: string;
   description: string;
   url: string;
+  basePath: string;
   isIndexable: boolean;
   locale: string;
   copyrightYear: number;
@@ -56,6 +57,7 @@ export const siteConfig = {
   description:
     "Psicologia Clínica online, fundamentada na Psicanálise, com escuta ética e acolhedora.",
   url: `${resolvedSiteUrl.url}${deploymentBasePath}`,
+  basePath: deploymentBasePath,
   isIndexable: indexableRequested,
   locale: "pt-BR",
   copyrightYear: 2026,

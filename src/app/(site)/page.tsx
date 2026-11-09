@@ -62,7 +62,7 @@ export default function HomePage() {
 
           <figure className="relative min-h-[34rem] overflow-hidden lg:-right-[max(1.25rem,calc((100vw-80rem)/2))] lg:min-h-full">
             <Image
-              src="/images/rodrigo-criveleto.jpeg"
+              src={`${siteConfig.basePath}/images/rodrigo-criveleto.jpeg`}
               alt="Retrato profissional do psicólogo Rodrigo Criveleto de Andrade"
               fill
               priority
