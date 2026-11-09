@@ -5,12 +5,12 @@ import { siteConfig } from "@/config/site";
 
 export function Header() {
   return (
-    <header className="bg-background/92 sticky top-0 z-40 border-b backdrop-blur-md">
+    <header className="bg-background/94 sticky top-0 z-40 border-b backdrop-blur-md">
       <Container className="flex min-h-20 items-center justify-between gap-6">
         <Link
           href="/"
           variant="unstyled"
-          className="font-heading text-primary max-w-52 text-lg leading-none font-semibold sm:max-w-none sm:text-xl"
+          className="font-heading text-primary max-w-52 text-lg leading-[1.05] font-semibold sm:max-w-none sm:text-xl"
         >
           {siteConfig.name}
         </Link>

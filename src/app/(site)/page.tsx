@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-primary mb-5 text-xs font-semibold tracking-[0.2em] uppercase">
+    <p className="text-primary mb-6 text-xs font-semibold tracking-[0.18em] uppercase">
       {children}
     </p>
   );
@@ -33,13 +33,13 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden border-b">
-        <Container className="grid min-h-[calc(100svh-5rem)] items-stretch gap-12 py-16 lg:grid-cols-[1.08fr_0.92fr] lg:gap-20 lg:py-0">
-          <div className="flex flex-col justify-center py-6 lg:py-24">
+        <Container className="grid min-h-[calc(100svh-5rem)] items-stretch gap-10 py-12 sm:py-16 lg:grid-cols-[1.04fr_0.96fr] lg:gap-20 lg:py-0">
+          <div className="flex flex-col justify-center py-4 lg:py-24">
             <SectionLabel>{rodrigoContent.hero.eyebrow}</SectionLabel>
-            <h1 className="font-heading text-primary max-w-4xl text-[clamp(3.5rem,7vw,6.8rem)] leading-[0.9] font-semibold tracking-[-0.035em] text-balance">
+            <h1 className="font-heading text-primary max-w-4xl text-[clamp(3.25rem,7vw,6.6rem)] leading-[0.92] font-semibold tracking-[-0.03em] text-balance">
               {rodrigoContent.hero.title}
             </h1>
-            <p className="text-muted-foreground mt-8 max-w-xl text-lg leading-8">
+            <p className="text-muted-foreground mt-7 max-w-xl text-lg leading-8 sm:mt-8">
               {rodrigoContent.hero.description}
             </p>
             <p className="mt-6 text-sm font-medium">
@@ -60,14 +60,14 @@ export default function HomePage() {
             </div>
           </div>
 
-          <figure className="relative min-h-[34rem] overflow-hidden lg:-right-[max(1.25rem,calc((100vw-80rem)/2))] lg:min-h-full">
+          <figure className="relative min-h-[31rem] overflow-hidden sm:min-h-[38rem] lg:-right-[max(1.25rem,calc((100vw-80rem)/2))] lg:min-h-full">
             <Image
               src={`${siteConfig.basePath}/images/rodrigo-criveleto.jpeg`}
               alt="Retrato profissional do psicólogo Rodrigo Criveleto de Andrade"
               fill
-              priority
+              preload
               sizes="(max-width: 1023px) 100vw, 46vw"
-              className="object-cover object-[50%_42%]"
+              className="object-cover object-[50%_38%] sm:object-[50%_40%] lg:object-[50%_44%]"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
             <figcaption className="text-on-image absolute right-8 bottom-8 left-8 sm:right-12 sm:bottom-12 sm:left-12">
@@ -84,9 +84,9 @@ export default function HomePage() {
         <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
           <div>
             <SectionLabel>Sobre Rodrigo</SectionLabel>
-            <p className="font-heading text-primary text-4xl leading-tight font-semibold sm:text-5xl">
+            <h2 className="font-heading text-primary text-4xl leading-[1.08] font-semibold text-balance sm:text-5xl">
               Escuta ética, individualizada e respeitosa.
-            </p>
+            </h2>
           </div>
           <div className="space-y-6 text-lg leading-8">
             {rodrigoContent.about.map((paragraph) => (
@@ -124,10 +124,10 @@ export default function HomePage() {
                 className="text-accent size-8 shrink-0"
                 aria-hidden="true"
               />
-              <p className="text-lg leading-8 opacity-85">
-                Um espaço seguro e livre de julgamentos, no qual seja possível
-                falar sobre sentimentos, angústias, conflitos e questões que
-                atravessam a vida.
+              <p className="text-lg leading-8 opacity-90">
+                Ofereço um espaço livre de julgamentos, no qual seja possível
+                falar sobre sentimentos, angústias, conflitos e questões da
+                vida.
               </p>
             </div>
           </div>
@@ -143,7 +143,7 @@ export default function HomePage() {
                 <h3 className="font-heading mt-10 text-3xl font-semibold">
                   {item.title}
                 </h3>
-                <p className="mt-4 leading-7 opacity-75">{item.text}</p>
+                <p className="mt-4 leading-7 opacity-80">{item.text}</p>
               </li>
             ))}
           </ol>
@@ -172,13 +172,13 @@ export default function HomePage() {
           </div>
           <div>
             <SectionLabel>Atendimento</SectionLabel>
-            <h2 className="font-heading text-primary text-5xl leading-none font-semibold sm:text-6xl">
+            <h2 className="font-heading text-primary text-5xl leading-[1.02] font-semibold text-balance sm:text-6xl">
               Presença e escuta, mesmo à distância.
             </h2>
             <p className="text-muted-foreground mt-7 text-lg leading-8">
-              Os atendimentos são realizados exclusivamente online, oferecendo
-              um espaço de escuta individualizada e respeitosa ao tempo de cada
-              pessoa.
+              Atualmente, realizo atendimentos exclusivamente online. Nesse
+              formato, ofereço um espaço de escuta individualizada e respeitosa
+              ao tempo de cada pessoa.
             </p>
             <div className="mt-9 flex items-center gap-4 border-t pt-6">
               <MapPin className="text-accent size-5" aria-hidden="true" />
@@ -196,14 +196,14 @@ export default function HomePage() {
       <section id="duvidas" className="bg-muted py-section-lg scroll-mt-20">
         <Container size="lg">
           <SectionLabel>Perguntas frequentes</SectionLabel>
-          <h2 className="font-heading text-primary max-w-2xl text-5xl leading-none font-semibold sm:text-6xl">
+          <h2 className="font-heading text-primary max-w-2xl text-5xl leading-[1.02] font-semibold text-balance sm:text-6xl">
             Antes de começar, é natural ter dúvidas.
           </h2>
           <div className="mt-14 border-t">
             {rodrigoContent.faqs.map((faq, index) => (
               <details key={faq.question} className="group border-b py-1">
                 <summary className="focus-visible:ring-ring flex cursor-pointer list-none items-center gap-6 py-6 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
-                  <span className="text-accent text-sm font-semibold">
+                  <span className="text-primary/65 text-sm font-semibold">
                     0{index + 1}
                   </span>
                   <span className="font-heading text-primary flex-1 text-2xl font-semibold sm:text-3xl">
@@ -216,7 +216,7 @@ export default function HomePage() {
                     +
                   </span>
                 </summary>
-                <p className="text-muted-foreground max-w-2xl pb-7 pl-12 leading-7">
+                <p className="text-muted-foreground max-w-2xl pb-7 pl-0 leading-7 sm:pl-12">
                   {faq.answer}
                 </p>
               </details>
@@ -228,7 +228,7 @@ export default function HomePage() {
       <section id="contato" className="py-section-lg scroll-mt-20">
         <Container size="lg" className="text-center">
           <SectionLabel>Primeiro contato</SectionLabel>
-          <h2 className="font-heading text-primary mx-auto max-w-3xl text-5xl leading-[0.98] font-semibold text-balance sm:text-7xl">
+          <h2 className="font-heading text-primary mx-auto max-w-3xl text-5xl leading-[1] font-semibold text-balance sm:text-7xl">
             Quando fizer sentido, há um espaço para começar.
           </h2>
           <p className="text-muted-foreground mx-auto mt-7 max-w-xl text-lg leading-8">

@@ -1,20 +1,20 @@
 :root {
   /* Fluid type scale: minimum mobile size → maximum wide-screen size. */
-  --type-display-size: clamp(2.75rem, 2.1rem + 3.25vw, 5rem);
-  --type-display-line: 1.02;
+  --type-display-size: clamp(3rem, 2.25rem + 3.75vw, 5.5rem);
+  --type-display-line: 0.98;
   --type-h1-size: clamp(2.25rem, 1.85rem + 2vw, 3.75rem);
   --type-h1-line: 1.08;
   --type-h2-size: clamp(1.875rem, 1.6rem + 1.35vw, 3rem);
-  --type-h2-line: 1.12;
+  --type-h2-line: 1.08;
   --type-h3-size: clamp(1.5rem, 1.35rem + 0.75vw, 2rem);
   --type-h3-line: 1.2;
   --type-lead-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
   --type-lead-line: 1.65;
 
   /* Layout rhythm and readable measures. */
-  --space-section-sm: clamp(3rem, 2.25rem + 3.75vw, 5rem);
-  --space-section-md: clamp(4rem, 3rem + 5vw, 7rem);
-  --space-section-lg: clamp(5rem, 3.5rem + 7.5vw, 9rem);
+  --space-section-sm: clamp(3.5rem, 2.75rem + 3.75vw, 5.5rem);
+  --space-section-md: clamp(4.5rem, 3.4rem + 5.5vw, 7.5rem);
+  --space-section-lg: clamp(5.5rem, 4rem + 7.5vw, 9.5rem);
   --gutter: clamp(1.25rem, 0.95rem + 1.5vw, 2rem);
   --layout-container-sm: 40rem;
   --layout-container-md: 48rem;

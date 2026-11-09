@@ -11,8 +11,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  cacheComponents: !isGitHubActions,
-  partialPrefetching: !isGitHubActions,
   turbopack: {
     rules: {
       "*.css": {

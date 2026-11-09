@@ -6,8 +6,9 @@ export const rodrigoContent = {
       "Psicoterapia online fundamentada na Psicanálise, com uma escuta ética, acolhedora e atenta à singularidade de cada pessoa.",
   },
   about: [
-    "Rodrigo atua na Psicologia Clínica, fundamentado na abordagem psicanalítica. Seu trabalho é voltado à escuta e ao acolhimento da singularidade de cada sujeito.",
-    "Também possui experiência na Psicologia Educacional, com atuação em questões relacionadas ao desenvolvimento humano, às relações familiares e aos aspectos emocionais e comportamentais.",
+    "Sou Rodrigo Criveleto de Andrade, psicólogo, e minha atuação na Psicologia Clínica é fundamentada na Psicanálise. Meu trabalho se volta à escuta e ao acolhimento da singularidade de cada sujeito.",
+    "Compreendo que cada pessoa possui uma história única. Por isso, ofereço um espaço livre de julgamentos, no qual sentimentos, angústias, conflitos e questões da vida possam ser falados, refletidos e elaborados.",
+    "Minha trajetória inclui também experiência na Psicologia Educacional, em questões relacionadas ao desenvolvimento humano, às relações familiares e aos aspectos emocionais e comportamentais.",
   ],
   listening: [
     {
@@ -30,12 +31,12 @@ export const rodrigoContent = {
     {
       question: "Como funciona a psicoterapia online?",
       answer:
-        "O atendimento acontece à distância, em um espaço reservado para a fala e a escuta. Plataforma, frequência, duração e demais combinações serão alinhadas diretamente com o profissional.",
+        "Realizo os atendimentos exclusivamente online, em um espaço reservado para a fala e a escuta. Plataforma, frequência, duração e demais combinações são alinhadas diretamente comigo.",
     },
     {
       question: "Como é o primeiro contato?",
       answer:
-        "O primeiro contato serve para manifestar seu interesse e receber as orientações iniciais. Os detalhes administrativos serão confirmados pelo profissional.",
+        "No primeiro contato, você pode manifestar seu interesse e receber as orientações iniciais. Nesse momento, compartilho também os detalhes administrativos do atendimento.",
     },
     {
       question: "Preciso saber exatamente o que quero falar?",
@@ -45,7 +46,7 @@ export const rodrigoContent = {
     {
       question: "Como posso agendar um atendimento?",
       answer:
-        "Você pode iniciar uma conversa pelo WhatsApp. No primeiro contato, Rodrigo compartilhará as orientações iniciais e os detalhes administrativos do atendimento.",
+        "Você pode iniciar uma conversa comigo pelo WhatsApp. No primeiro contato, compartilho as orientações iniciais e os detalhes administrativos do atendimento.",
     },
   ],
 } as const;
