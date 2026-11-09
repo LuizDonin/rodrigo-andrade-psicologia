@@ -1,12 +1,20 @@
+import { resolveBasePath } from "@/config/deployment";
+
 export type SiteConfig = {
   name: string;
+  professionalTitle: string;
+  registration: string;
   description: string;
   url: string;
   basePath: string;
   isIndexable: boolean;
   locale: string;
   copyrightYear: number;
-  contact: { email?: string; whatsapp?: string };
+  contact: {
+    email?: string;
+    whatsapp?: string;
+    whatsappDisplay?: string;
+  };
   social: { instagram?: string; linkedin?: string };
 };
 
@@ -37,11 +45,7 @@ function resolveSiteUrl() {
 
 const resolvedSiteUrl = resolveSiteUrl();
 const indexableRequested = process.env.SITE_INDEXABLE === "true";
-const githubRepositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1];
-const deploymentBasePath =
-  process.env.GITHUB_ACTIONS === "true" && githubRepositoryName
-    ? `/${githubRepositoryName}`
-    : "";
+const deploymentBasePath = resolveBasePath();
 
 if (
   indexableRequested &&
@@ -54,15 +58,18 @@ if (
 
 export const siteConfig = {
   name: "Rodrigo Criveleto de Andrade",
+  professionalTitle: "Psicólogo",
+  registration: "CRP 07/35989",
   description:
     "Psicologia Clínica online, fundamentada na Psicanálise, com escuta ética e acolhedora.",
-  url: `${resolvedSiteUrl.url}${deploymentBasePath}`,
+  url: `${resolvedSiteUrl.url}${deploymentBasePath}/`,
   basePath: deploymentBasePath,
   isIndexable: indexableRequested,
   locale: "pt-BR",
   copyrightYear: 2026,
   contact: {
     whatsapp: "555591075674",
+    whatsappDisplay: "+55 55 9107-5674",
   },
   social: {},
 } satisfies SiteConfig;

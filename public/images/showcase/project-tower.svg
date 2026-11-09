@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-labelledby="title desc">
-  <title id="title">Torre urbana abstrata</title>
-  <desc id="desc">Edifício vertical em terracota contra um céu azul profundo.</desc>
-  <rect width="1200" height="1600" fill="#24475d"/>
-  <circle cx="910" cy="260" r="150" fill="#e9c98e"/>
-  <path d="M180 1480V430l410-230 430 260v1020z" fill="#a9573e"/>
-  <path d="M300 520h180v820H300zm280-120h180v940H580zm280 160h70v780h-70z" fill="#e4c9aa"/>
-  <path d="M0 1390h1200v210H0z" fill="#17303f"/>
-</svg>

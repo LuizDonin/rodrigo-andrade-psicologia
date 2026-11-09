@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1100" role="img" aria-labelledby="title desc">
-  <title id="title">Paisagem costeira estilizada ao entardecer</title>
-  <desc id="desc">Montanhas escuras, mar azul e um sol claro formam uma paisagem editorial.</desc>
-  <rect width="1800" height="1100" fill="#7894c8"/>
-  <circle cx="1370" cy="300" r="170" fill="#f4d7a1"/>
-  <path d="M0 650 420 250l390 400 300-270 440 330 250-170v560H0Z" fill="#263b68"/>
-  <path d="M0 790c260-90 420 40 680-25s410-20 620 20 330-20 500-55v370H0Z" fill="#43649c"/>
-  <path d="M0 900c340-70 500 65 820 5s600 50 980-20v215H0Z" fill="#d7e1ef" opacity=".75"/>
-</svg>

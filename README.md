@@ -11,7 +11,7 @@ pnpm install
 pnpm dev
 ```
 
-O projeto permanece não indexável por padrão. Mantenha `SITE_INDEXABLE=false` durante desenvolvimento e preview.
+O projeto permanece não indexável por padrão. Mantenha `SITE_INDEXABLE=false` durante desenvolvimento e preview. Use `NEXT_PUBLIC_BASE_PATH` apenas quando o site for publicado em um subdiretório, como no GitHub Pages; em domínio próprio, deixe-o vazio.
 
 ## Antes de publicar
 

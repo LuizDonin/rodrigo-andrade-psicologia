@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Laptop, MapPin, Quote } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Quote } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { Button } from "@/components/ui/button";
@@ -21,9 +21,17 @@ export const metadata: Metadata = {
     : undefined,
 };
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function SectionLabel({
+  children,
+  tone = "default",
+}: {
+  children: React.ReactNode;
+  tone?: "default" | "inverse";
+}) {
   return (
-    <p className="text-primary mb-6 text-xs font-semibold tracking-[0.18em] uppercase">
+    <p
+      className={`mb-6 text-xs font-semibold tracking-[0.18em] uppercase ${tone === "inverse" ? "text-secondary" : "text-primary"}`}
+    >
       {children}
     </p>
   );
@@ -33,20 +41,30 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden border-b">
-        <Container className="grid min-h-[calc(100svh-5rem)] items-stretch gap-10 py-12 sm:py-16 lg:grid-cols-[1.04fr_0.96fr] lg:gap-20 lg:py-0">
-          <div className="flex flex-col justify-center py-4 lg:py-24">
+        <Container className="grid min-h-[calc(100svh-5rem)] items-stretch gap-10 py-12 sm:py-16 lg:grid-cols-[0.88fr_1.12fr] lg:gap-16 lg:py-0 xl:gap-24">
+          <div className="relative z-10 flex flex-col justify-center py-4 lg:py-24">
+            <span
+              className="border-accent absolute top-12 -left-8 hidden size-16 border-t border-l xl:block"
+              aria-hidden="true"
+            />
             <SectionLabel>{rodrigoContent.hero.eyebrow}</SectionLabel>
-            <h1 className="font-heading text-primary max-w-4xl text-[clamp(3.25rem,7vw,6.6rem)] leading-[0.92] font-semibold tracking-[-0.03em] text-balance">
-              {rodrigoContent.hero.title}
+            <h1 className="font-heading text-primary max-w-[10ch] text-[clamp(3.4rem,6.4vw,6.65rem)] leading-[0.89] font-semibold tracking-[-0.035em] sm:max-w-[11ch]">
+              <span className="block">Um espaço para a sua</span>
+              <span className="block italic">palavra, no seu tempo.</span>
             </h1>
-            <p className="text-muted-foreground mt-7 max-w-xl text-lg leading-8 sm:mt-8">
+            <p className="text-muted-foreground mt-8 max-w-lg text-lg leading-8 sm:mt-10">
               {rodrigoContent.hero.description}
             </p>
-            <p className="mt-6 text-sm font-medium">
-              Rodrigo Criveleto de Andrade{" "}
-              <span className="text-accent mx-2">·</span> CRP 07/35989
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="border-border mt-7 flex max-w-lg flex-col gap-1 border-t pt-5 text-sm sm:flex-row sm:items-center sm:gap-3">
+              <p className="font-semibold">{siteConfig.name}</p>
+              <span className="text-accent hidden sm:inline" aria-hidden="true">
+                ·
+              </span>
+              <p className="text-muted-foreground">
+                {siteConfig.professionalTitle} · {siteConfig.registration}
+              </p>
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
                 <a href={whatsappHref} target="_blank" rel="noreferrer">
                   Agendar atendimento <ArrowUpRight aria-hidden="true" />
@@ -60,19 +78,19 @@ export default function HomePage() {
             </div>
           </div>
 
-          <figure className="relative min-h-[31rem] overflow-hidden sm:min-h-[38rem] lg:-right-[max(1.25rem,calc((100vw-80rem)/2))] lg:min-h-full">
+          <figure className="relative min-h-[32rem] overflow-hidden sm:min-h-[42rem] lg:-right-[max(1.25rem,calc((100vw-80rem)/2))] lg:min-h-full">
             <Image
               src={`${siteConfig.basePath}/images/rodrigo-criveleto.jpeg`}
               alt="Retrato profissional do psicólogo Rodrigo Criveleto de Andrade"
               fill
               preload
-              sizes="(max-width: 1023px) 100vw, 46vw"
-              className="object-cover object-[50%_38%] sm:object-[50%_40%] lg:object-[50%_44%]"
+              sizes="(max-width: 1023px) 100vw, 55vw"
+              className="object-cover object-[50%_36%] sm:object-[50%_40%] lg:object-[50%_43%]"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
-            <figcaption className="text-on-image absolute right-8 bottom-8 left-8 sm:right-12 sm:bottom-12 sm:left-12">
-              <span className="bg-accent block h-px w-16" />
-              <p className="font-heading mt-4 max-w-xs text-2xl leading-tight font-semibold">
+            <figcaption className="text-on-image absolute right-7 bottom-7 left-7 flex items-end gap-4 sm:right-12 sm:bottom-12 sm:left-12">
+              <span className="border-accent mb-1 block size-8 shrink-0 border-b border-l" />
+              <p className="font-heading max-w-xs text-2xl leading-[1.05] font-semibold">
                 A escuta como espaço de encontro.
               </p>
             </figcaption>
@@ -80,19 +98,25 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section id="sobre" className="py-section-lg scroll-mt-20">
-        <Container className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-24">
-          <div>
+      <section
+        id="sobre"
+        className="py-section-lg scroll-mt-32 md:scroll-mt-20"
+      >
+        <Container className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20 xl:gap-28">
+          <div className="lg:sticky lg:top-32 lg:self-start">
             <SectionLabel>Sobre Rodrigo</SectionLabel>
-            <h2 className="font-heading text-primary text-4xl leading-[1.08] font-semibold text-balance sm:text-5xl">
+            <h2 className="font-heading text-primary max-w-md text-4xl leading-[1.04] font-semibold text-balance sm:text-5xl">
               Escuta ética, individualizada e respeitosa.
             </h2>
           </div>
-          <div className="space-y-6 text-lg leading-8">
+          <div className="max-w-2xl space-y-6 text-lg leading-8">
+            <p className="font-heading text-primary border-accent max-w-xl border-l pl-6 text-3xl leading-[1.08] font-semibold italic sm:text-4xl">
+              A singularidade não cabe em respostas prontas.
+            </p>
             {rodrigoContent.about.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <div className="border-accent mt-10 border-l-2 pl-6">
+            <div className="border-border mt-10 border-t pt-6">
               <p className="text-sm font-semibold tracking-[0.12em] uppercase">
                 Atuação profissional
               </p>
@@ -107,67 +131,75 @@ export default function HomePage() {
 
       <section
         id="escuta"
-        className="bg-primary text-primary-foreground py-section-lg scroll-mt-20"
+        className="bg-primary text-primary-foreground py-section-lg scroll-mt-32 md:scroll-mt-20"
       >
         <Container>
-          <div className="grid gap-10 lg:grid-cols-2 lg:gap-20">
+          <div className="grid gap-12 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-24">
             <div>
-              <p className="mb-5 text-xs font-semibold tracking-[0.2em] uppercase opacity-70">
-                A escuta psicanalítica
-              </p>
-              <h2 className="font-heading text-5xl leading-[0.98] font-semibold text-balance sm:text-6xl">
+              <SectionLabel tone="inverse">A escuta psicanalítica</SectionLabel>
+              <h2 className="font-heading max-w-2xl text-5xl leading-[0.94] font-semibold text-balance sm:text-6xl lg:text-7xl">
                 Há caminhos que começam quando algo pode ser dito.
               </h2>
             </div>
-            <div className="flex items-start gap-5 border-t border-white/20 pt-7 lg:mt-24">
+            <div className="border-secondary/25 flex items-start gap-5 border-t pt-7">
               <Quote
                 className="text-accent size-8 shrink-0"
                 aria-hidden="true"
               />
-              <p className="text-lg leading-8 opacity-90">
+              <p className="text-secondary text-lg leading-8">
                 Ofereço um espaço livre de julgamentos, no qual seja possível
                 falar sobre sentimentos, angústias, conflitos e questões da
                 vida.
               </p>
             </div>
           </div>
-          <ol className="mt-20 grid border-t border-white/20 md:grid-cols-3">
+          <ol className="border-secondary/20 mt-20 border-t">
             {rodrigoContent.listening.map((item) => (
               <li
                 key={item.number}
-                className="border-b border-white/20 py-8 first:pl-0 last:border-r-0 md:border-r md:border-b-0 md:px-8"
+                className="border-secondary/20 grid gap-5 border-b py-8 sm:grid-cols-[4rem_1fr] sm:gap-8 lg:grid-cols-[5rem_0.65fr_1.35fr] lg:items-baseline lg:gap-12 lg:py-10"
               >
-                <span className="text-accent text-sm font-semibold">
+                <span className="font-heading text-accent text-4xl leading-none font-semibold italic">
                   {item.number}
                 </span>
-                <h3 className="font-heading mt-10 text-3xl font-semibold">
+                <h3 className="font-heading text-secondary text-3xl leading-[1.05] font-semibold">
                   {item.title}
                 </h3>
-                <p className="mt-4 leading-7 opacity-80">{item.text}</p>
+                <p className="text-secondary/80 max-w-xl leading-7 sm:col-start-2 lg:col-start-auto">
+                  {item.text}
+                </p>
               </li>
             ))}
           </ol>
         </Container>
       </section>
 
-      <section id="atendimento" className="py-section-lg scroll-mt-20">
-        <Container className="grid items-center gap-14 lg:grid-cols-[1fr_1fr] lg:gap-24">
-          <div className="bg-secondary relative min-h-[22rem] overflow-hidden p-10 sm:aspect-[4/3] sm:min-h-0 sm:p-12">
-            <div className="border-primary/20 absolute inset-5 border sm:inset-6" />
-            <div className="relative z-10 flex h-full flex-col justify-between py-3 sm:py-0">
-              <Laptop
-                className="text-primary size-10"
-                strokeWidth={1.4}
-                aria-hidden="true"
-              />
+      <section
+        id="atendimento"
+        className="py-section-lg scroll-mt-32 md:scroll-mt-20"
+      >
+        <Container className="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-20 xl:gap-28">
+          <div className="bg-secondary relative min-h-[27rem] overflow-hidden p-8 sm:min-h-[30rem] sm:p-12">
+            <div className="border-primary/20 absolute inset-5 border sm:inset-7" />
+            <span
+              className="border-primary/15 absolute -top-20 -right-20 size-64 rounded-full border sm:size-80"
+              aria-hidden="true"
+            />
+            <div className="relative z-10 flex min-h-[23rem] flex-col justify-between sm:min-h-[24rem]">
+              <p className="text-primary text-xs font-semibold tracking-[0.18em] uppercase">
+                Modalidade de atendimento
+              </p>
               <div>
-                <p className="font-heading text-primary text-5xl font-semibold">
-                  Online
+                <p className="font-heading text-primary text-[clamp(2.65rem,5.8vw,5.25rem)] leading-[0.88] font-semibold tracking-[-0.045em]">
+                  Exclusivamente
                 </p>
-                <p className="text-muted-foreground mt-2">
-                  Atendimento de onde você estiver.
+                <p className="font-heading text-primary ml-[0.55em] text-[clamp(4.25rem,8vw,7.25rem)] leading-[0.82] font-semibold tracking-[-0.055em] italic">
+                  online.
                 </p>
               </div>
+              <p className="text-muted-foreground max-w-xs text-sm leading-6">
+                Um espaço reservado para a fala e a escuta, mesmo à distância.
+              </p>
             </div>
           </div>
           <div>
@@ -176,33 +208,29 @@ export default function HomePage() {
               Presença e escuta, mesmo à distância.
             </h2>
             <p className="text-muted-foreground mt-7 text-lg leading-8">
-              Atualmente, realizo atendimentos exclusivamente online. Nesse
-              formato, ofereço um espaço de escuta individualizada e respeitosa
-              ao tempo de cada pessoa.
+              Nesse formato, ofereço um espaço de escuta individualizada e
+              respeitosa ao tempo de cada pessoa.
             </p>
-            <div className="mt-9 flex items-center gap-4 border-t pt-6">
-              <MapPin className="text-accent size-5" aria-hidden="true" />
-              <div>
-                <p className="font-semibold">Modalidade online</p>
-                <p className="text-muted-foreground mt-1 text-sm">
-                  Plataforma, frequência e duração a confirmar.
-                </p>
-              </div>
-            </div>
           </div>
         </Container>
       </section>
 
-      <section id="duvidas" className="bg-muted py-section-lg scroll-mt-20">
+      <section
+        id="duvidas"
+        className="bg-muted py-section-lg scroll-mt-32 md:scroll-mt-20"
+      >
         <Container size="lg">
           <SectionLabel>Perguntas frequentes</SectionLabel>
           <h2 className="font-heading text-primary max-w-2xl text-5xl leading-[1.02] font-semibold text-balance sm:text-6xl">
             Antes de começar, é natural ter dúvidas.
           </h2>
-          <div className="mt-14 border-t">
+          <div className="border-primary/20 mt-14 border-t">
             {rodrigoContent.faqs.map((faq, index) => (
-              <details key={faq.question} className="group border-b py-1">
-                <summary className="focus-visible:ring-ring flex cursor-pointer list-none items-center gap-6 py-6 outline-none focus-visible:ring-2 focus-visible:ring-offset-2 [&::-webkit-details-marker]:hidden">
+              <details
+                key={faq.question}
+                className="group border-primary/20 border-b"
+              >
+                <summary className="focus-visible:ring-ring hover:bg-secondary/65 flex cursor-pointer list-none items-center gap-4 px-2 py-7 transition-colors outline-none focus-visible:ring-2 focus-visible:ring-offset-2 motion-reduce:transition-none sm:gap-6 sm:px-4 [&::-webkit-details-marker]:hidden">
                   <span className="text-primary/65 text-sm font-semibold">
                     0{index + 1}
                   </span>
@@ -210,13 +238,13 @@ export default function HomePage() {
                     {faq.question}
                   </span>
                   <span
-                    className="text-primary text-2xl transition-transform group-open:rotate-45"
+                    className="text-primary grid size-8 place-items-center text-2xl transition-transform group-open:rotate-45 motion-reduce:transition-none"
                     aria-hidden="true"
                   >
                     +
                   </span>
                 </summary>
-                <p className="text-muted-foreground max-w-2xl pb-7 pl-0 leading-7 sm:pl-12">
+                <p className="text-muted-foreground max-w-2xl px-2 pb-8 leading-7 sm:px-4 sm:pl-16">
                   {faq.answer}
                 </p>
               </details>
@@ -225,22 +253,33 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section id="contato" className="py-section-lg scroll-mt-20">
-        <Container size="lg" className="text-center">
-          <SectionLabel>Primeiro contato</SectionLabel>
-          <h2 className="font-heading text-primary mx-auto max-w-3xl text-5xl leading-[1] font-semibold text-balance sm:text-7xl">
+      <section
+        id="contato"
+        className="bg-primary text-primary-foreground py-section-lg scroll-mt-32 md:scroll-mt-20"
+      >
+        <Container size="lg" className="relative text-center">
+          <span
+            className="border-accent/70 absolute top-0 left-1/2 h-14 border-l"
+            aria-hidden="true"
+          />
+          <div className="pt-24">
+            <SectionLabel tone="inverse">Primeiro contato</SectionLabel>
+          </div>
+          <h2 className="font-heading mx-auto max-w-3xl text-5xl leading-[0.96] font-semibold text-balance sm:text-7xl">
             Quando fizer sentido, há um espaço para começar.
           </h2>
-          <p className="text-muted-foreground mx-auto mt-7 max-w-xl text-lg leading-8">
+          <p className="text-secondary/85 mx-auto mt-8 max-w-xl text-lg leading-8">
             Entre em contato pelo WhatsApp para receber as orientações iniciais
             e conversar sobre a possibilidade de atendimento.
           </p>
-          <Button asChild size="lg" className="mt-9">
+          <Button asChild size="lg" variant="secondary" className="mt-10">
             <a href={whatsappHref} target="_blank" rel="noreferrer">
               Conversar pelo WhatsApp <ArrowUpRight aria-hidden="true" />
             </a>
           </Button>
-          <p className="text-muted-foreground mt-3 text-xs">+55 55 9107-5674</p>
+          <p className="text-secondary/75 mt-4 text-xs">
+            {siteConfig.contact.whatsappDisplay}
+          </p>
         </Container>
       </section>
     </>

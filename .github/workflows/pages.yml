@@ -41,10 +41,8 @@ jobs:
         run: pnpm build
         env:
           NEXT_PUBLIC_SITE_URL: https://luizdonin.github.io
-          SITE_INDEXABLE: "true"
-
-      - name: Remove development-only exports
-        run: rm -rf out/dev
+          NEXT_PUBLIC_BASE_PATH: /rodrigo-andrade-psicologia
+          SITE_INDEXABLE: "false"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4

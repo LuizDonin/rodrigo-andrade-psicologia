@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+import { siteConfig } from "@/config/site";
+
 export const alt = "Rodrigo Criveleto de Andrade — Psicologia Clínica";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -42,7 +44,7 @@ export default function OpenGraphImage() {
               lineHeight: 1,
             }}
           >
-            Rodrigo Criveleto de Andrade
+            {siteConfig.name}
           </div>
           <div
             style={{
@@ -52,7 +54,7 @@ export default function OpenGraphImage() {
               marginTop: 24,
             }}
           >
-            Psicólogo · CRP 07/35989
+            {siteConfig.professionalTitle} · {siteConfig.registration}
           </div>
         </div>
       </div>
