@@ -152,9 +152,9 @@ export default function HomePage() {
 
       <section id="atendimento" className="py-section-lg scroll-mt-20">
         <Container className="grid items-center gap-14 lg:grid-cols-[1fr_1fr] lg:gap-24">
-          <div className="bg-secondary relative aspect-[4/3] overflow-hidden p-8 sm:p-12">
-            <div className="border-primary/20 absolute inset-6 border" />
-            <div className="relative flex h-full flex-col justify-between">
+          <div className="bg-secondary relative min-h-[22rem] overflow-hidden p-10 sm:aspect-[4/3] sm:min-h-0 sm:p-12">
+            <div className="border-primary/20 absolute inset-5 border sm:inset-6" />
+            <div className="relative z-10 flex h-full flex-col justify-between py-3 sm:py-0">
               <Laptop
                 className="text-primary size-10"
                 strokeWidth={1.4}
