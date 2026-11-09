@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Interior editorial abstrato</title>
+  <desc id="desc">Sala minimalista com luz quente, mobiliário escuro e formas curvas.</desc>
+  <rect width="1600" height="1000" fill="#dbcdbd"/>
+  <path d="M0 760h1600v240H0z" fill="#8f735e"/>
+  <path d="M1050 80h390v680h-390z" fill="#eee7dd"/>
+  <path d="M1120 150h250v510h-250z" fill="#b6c5bd"/>
+  <path d="M170 570q250-260 500 0v250H170z" fill="#343b3c"/>
+  <ellipse cx="800" cy="770" rx="270" ry="90" fill="#bf7655"/>
+  <circle cx="340" cy="260" r="120" fill="#c08b56"/>
+</svg>

@@ -1,0 +1,95 @@
+/*
+ * Project identity lives in the --brand-* tokens. Change these values first
+ * when adapting the starter; semantic tokens below remain stable for components.
+ */
+:root {
+  color-scheme: light;
+
+  --brand-font-sans: var(--font-dm-sans), Arial, sans-serif;
+  --brand-font-heading: var(--font-cormorant), Georgia, serif;
+  --brand-font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --brand-radius: 0.35rem;
+
+  --brand-primary: #354d43;
+  --brand-primary-hover: #293e35;
+  --brand-primary-active: #21342c;
+  --brand-focus: #9a634d;
+
+  --background: #f7f4ee;
+  --foreground: #292d2a;
+  --surface: #fffdf8;
+  --surface-foreground: var(--foreground);
+  --card: var(--surface);
+  --card-foreground: var(--surface-foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--surface-foreground);
+  --primary: var(--brand-primary);
+  --primary-hover: var(--brand-primary-hover);
+  --primary-active: var(--brand-primary-active);
+  --primary-foreground: #fdfbf6;
+  --secondary: #e6ddd0;
+  --secondary-hover: #d8cbbc;
+  --secondary-foreground: #292d2a;
+  --muted: #eee8df;
+  --muted-foreground: #5f655f;
+  --accent: #b98268;
+  --accent-hover: #a36c54;
+  --accent-foreground: #211713;
+  --destructive: oklch(0.52 0.21 27);
+  --destructive-hover: oklch(0.46 0.2 27);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: #d7cec2;
+  --input: #c9bfb2;
+  --ring: var(--brand-focus);
+  --link: var(--brand-primary);
+  --link-hover: var(--brand-primary-hover);
+  --overlay-soft: oklch(0 0 0 / 66%);
+  --overlay: oklch(0 0 0 / 76%);
+  --overlay-strong: oklch(0 0 0 / 86%);
+  --on-image: oklch(0.985 0 0);
+  --on-image-action-foreground: oklch(0.16 0.018 255);
+  --radius: var(--brand-radius);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --brand-primary: oklch(0.72 0.14 258);
+  --brand-primary-hover: oklch(0.78 0.12 258);
+  --brand-primary-active: oklch(0.82 0.1 258);
+  --brand-focus: oklch(0.68 0.14 258);
+
+  --background: oklch(0.16 0.018 255);
+  --foreground: oklch(0.97 0.006 255);
+  --surface: oklch(0.2 0.02 255);
+  --surface-foreground: var(--foreground);
+  --card: var(--surface);
+  --card-foreground: var(--surface-foreground);
+  --popover: var(--surface);
+  --popover-foreground: var(--surface-foreground);
+  --primary: var(--brand-primary);
+  --primary-hover: var(--brand-primary-hover);
+  --primary-active: var(--brand-primary-active);
+  --primary-foreground: oklch(0.16 0.018 255);
+  --secondary: oklch(0.27 0.03 255);
+  --secondary-hover: oklch(0.32 0.04 255);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.25 0.02 255);
+  --muted-foreground: oklch(0.74 0.025 255);
+  --accent: oklch(0.28 0.04 255);
+  --accent-hover: oklch(0.34 0.05 255);
+  --accent-foreground: var(--foreground);
+  --destructive: oklch(0.7 0.19 22);
+  --destructive-hover: oklch(0.76 0.16 22);
+  --destructive-foreground: oklch(0.16 0.018 255);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: var(--brand-focus);
+  --link: var(--brand-primary);
+  --link-hover: var(--brand-primary-hover);
+  --overlay-soft: oklch(0 0 0 / 66%);
+  --overlay: oklch(0 0 0 / 76%);
+  --overlay-strong: oklch(0 0 0 / 86%);
+  --on-image: oklch(0.985 0 0);
+  --on-image-action-foreground: oklch(0.16 0.018 255);
+}

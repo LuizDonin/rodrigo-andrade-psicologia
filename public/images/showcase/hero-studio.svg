@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" role="img" aria-labelledby="title desc">
+  <title id="title">Estúdio criativo abstrato</title>
+  <desc id="desc">Formas arquitetônicas em azul, creme e coral representam um espaço criativo.</desc>
+  <rect width="1200" height="1500" fill="#182a52"/>
+  <rect x="105" y="115" width="990" height="1270" rx="60" fill="#f5efe2"/>
+  <circle cx="850" cy="430" r="250" fill="#e66e58"/>
+  <path d="M105 980 520 565l575 575v245H105Z" fill="#5d78bb"/>
+  <path d="m105 1160 330-330 440 440-115 115H105Z" fill="#2b467f"/>
+  <rect x="190" y="205" width="350" height="36" rx="18" fill="#182a52"/>
+  <rect x="190" y="275" width="230" height="24" rx="12" fill="#7b8498"/>
+  <circle cx="890" cy="1165" r="105" fill="#f5efe2" stroke="#182a52" stroke-width="22"/>
+</svg>

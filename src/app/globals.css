@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "../styles/themes.css";
+@import "../styles/tokens.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth font-sans;
+  }
+
+  body {
+    @apply bg-background text-foreground min-w-80;
+  }
+
+  ::selection {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  :where(a, button, input, textarea, select, summary):focus-visible {
+    @apply outline-ring outline-2 outline-offset-2;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
