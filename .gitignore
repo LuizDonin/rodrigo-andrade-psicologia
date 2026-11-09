@@ -31,6 +31,7 @@ yarn-debug.log*
 yarn-error.log*
 .dev-server.log
 .dev-server.error.log
+.ci-job.log
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
