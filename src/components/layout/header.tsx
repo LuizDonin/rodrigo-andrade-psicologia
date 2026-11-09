@@ -1,4 +1,5 @@
 import { Container } from "@/components/layout/container";
+import { MobileNavigation } from "@/components/layout/mobile-navigation";
 import { Link } from "@/components/ui/link";
 import { mainNavigation } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
@@ -6,16 +7,27 @@ import { siteConfig } from "@/config/site";
 export function Header() {
   return (
     <header className="bg-background/94 sticky top-0 z-40 border-b backdrop-blur-md">
-      <Container className="flex min-h-20 flex-col justify-center gap-4 py-4 md:flex-row md:items-center md:justify-between md:gap-6 md:py-0">
+      <Container className="flex h-[4.25rem] items-center justify-between gap-4 md:min-h-20">
         <Link
           href="/"
           variant="unstyled"
-          className="font-heading text-primary self-start text-lg leading-[1.05] font-semibold sm:text-xl md:self-auto"
+          className="font-heading text-primary text-xl leading-none font-semibold md:hidden"
+          aria-label="Rodrigo Criveleto de Andrade — página inicial"
+        >
+          Rodrigo Andrade
+        </Link>
+        <Link
+          href="/"
+          variant="unstyled"
+          className="font-heading text-primary hidden text-xl leading-none font-semibold md:inline-flex"
         >
           {siteConfig.name}
         </Link>
-        <nav aria-label="Navegação principal" className="w-full md:w-auto">
-          <ul className="grid grid-cols-2 gap-x-5 gap-y-2 sm:flex sm:flex-wrap sm:items-center sm:gap-x-6 md:flex-nowrap">
+
+        <MobileNavigation items={mainNavigation} />
+
+        <nav aria-label="Navegação principal" className="hidden md:block">
+          <ul className="flex items-center gap-x-6">
             {mainNavigation.map((item) => (
               <li key={item.href}>
                 <Link
