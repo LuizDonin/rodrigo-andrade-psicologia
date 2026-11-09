@@ -21,7 +21,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   variant="subtle"
-                  className="group/nav relative inline-flex min-h-8 items-center text-sm font-medium after:absolute after:right-0 after:bottom-0 after:left-0 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform hover:after:scale-x-100 motion-reduce:after:transition-none"
+                  className="group/nav relative inline-flex min-h-8 items-center text-sm font-medium after:absolute after:right-0 after:bottom-0 after:left-0 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform hover:after:scale-x-100 focus-visible:after:scale-x-100 motion-reduce:after:transition-none"
                 >
                   {item.label}
                 </Link>
