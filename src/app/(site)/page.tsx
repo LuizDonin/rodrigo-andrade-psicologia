@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowUpRight, Quote } from "lucide-react";
+import { Quote } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { MotionObserver } from "@/components/shared/motion-observer";
+import { FloatingWhatsApp } from "@/components/shared/floating-whatsapp";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { rodrigoContent } from "@/content/rodrigo";
+import { whatsappHref } from "@/lib/whatsapp";
 
-const whatsappMessage = encodeURIComponent(
-  "Olá, Rodrigo. Encontrei seu site e gostaria de saber mais sobre o atendimento psicológico online.",
-);
-const whatsappHref = `https://wa.me/${siteConfig.contact.whatsapp}?text=${whatsappMessage}`;
+const contactCtaId = "contact-whatsapp-cta";
 
 export const metadata: Metadata = {
   title: "Psicologia Clínica online",
@@ -42,6 +41,7 @@ export default function HomePage() {
   return (
     <>
       <MotionObserver />
+      <FloatingWhatsApp href={whatsappHref} contactCtaId={contactCtaId} />
       <section className="relative overflow-hidden border-b">
         <Container className="grid min-h-[calc(100svh-5rem)] items-stretch gap-10 py-12 sm:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:py-0 xl:gap-20">
           <div className="relative z-10 flex flex-col justify-center py-4 lg:py-24">
@@ -83,20 +83,18 @@ export default function HomePage() {
             >
               <Button asChild size="lg">
                 <a href={whatsappHref} target="_blank" rel="noreferrer">
-                  Agendar atendimento <ArrowUpRight aria-hidden="true" />
+                  Agendar atendimento
                 </a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <Link href="#sobre">
-                  Conheça meu trabalho <ArrowDown aria-hidden="true" />
-                </Link>
+                <Link href="#sobre">Conheça meu trabalho</Link>
               </Button>
             </div>
           </div>
 
           <figure
             data-hero-photo
-            className="relative min-h-[32rem] overflow-hidden sm:min-h-[42rem] lg:my-8 lg:min-h-0 xl:my-10"
+            className="relative min-h-[32rem] overflow-hidden rounded-xl sm:min-h-[42rem] sm:rounded-2xl lg:my-8 lg:min-h-0 lg:rounded-[18px] xl:my-10"
           >
             <Image
               src={`${siteConfig.basePath}/images/rodrigo-criveleto.jpeg`}
@@ -300,8 +298,13 @@ export default function HomePage() {
             e conversar sobre a possibilidade de atendimento.
           </p>
           <Button asChild size="lg" variant="secondary" className="mt-10">
-            <a href={whatsappHref} target="_blank" rel="noreferrer">
-              Conversar pelo WhatsApp <ArrowUpRight aria-hidden="true" />
+            <a
+              id={contactCtaId}
+              href={whatsappHref}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Conversar pelo WhatsApp
             </a>
           </Button>
           <p className="text-secondary/75 mt-4 text-xs">
